@@ -23,9 +23,6 @@
 #ifndef __SYSTEMBASE_H__
 #define __SYSTEMBASE_H__
 
-#include <stdio.h>
-#include "common.h"
-
 class kexSystem {
 public:
                             kexSystem(void);

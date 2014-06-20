@@ -30,7 +30,7 @@ distribution.
 #   include <cstddef>
 #endif
 
-#include "common.h"
+#include "kexlib.h"
 
 static const char LINE_FEED				= (char)0x0a;			// all line endings are normalized to LF
 static const char LF = LINE_FEED;

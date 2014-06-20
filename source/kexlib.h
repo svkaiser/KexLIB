@@ -23,7 +23,146 @@
 #ifndef __KEXLIB_H__
 #define __KEXLIB_H__
 
-#include "common.h"
+#if defined(__APPLE__)
+/* lets us know what version of Mac OS X we're compiling on */
+#include "AvailabilityMacros.h"
+#include "TargetConditionals.h"
+#if TARGET_OS_IPHONE
+/* if compiling for iPhone */
+#undef __IPHONEOS__
+#define __IPHONEOS__ 1
+#undef __MACOSX__
+#else
+/* if not compiling for iPhone */
+#undef __MACOSX__
+#define __MACOSX__  1
+#if MAC_OS_X_VERSION_MIN_REQUIRED < 1050
+# error KexLIB for Mac OS X only supports deploying on 10.5 and above.
+#endif /* MAC_OS_X_VERSION_MIN_REQUIRED < 1050 */
+#if MAC_OS_X_VERSION_MAX_ALLOWED < 1060
+# error KexLIB for Mac OS X must be built with a 10.6 SDK or above.
+#endif /* MAC_OS_X_VERSION_MAX_ALLOWED < 1060 */
+#endif /* TARGET_OS_IPHONE */
+#endif /* defined(__APPLE__) */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
+#include <assert.h>
+#include <ctype.h>
+#ifdef _MSC_VER
+#include "opndir.h"
+#else
+#include <dirent.h>
+#endif
+#include <new>
+
+#define MAX_FILEPATH    256
+#define MAX_HASH        2048
+
+typedef unsigned char   byte;
+typedef unsigned short  word;
+typedef unsigned long   ulong;
+typedef int             kbool;
+typedef unsigned int    dtexture;
+typedef unsigned int    rcolor;
+typedef char            filepath_t[MAX_FILEPATH];
+
+#if defined(_MSC_VER)
+typedef signed __int8 int8_t;
+typedef unsigned __int8 uint8_t;
+typedef signed __int16 int16_t;
+typedef unsigned __int16 uint16_t;
+typedef signed __int32 int32_t;
+typedef unsigned __int32 uint32_t;
+typedef signed __int64 int64_t;
+typedef unsigned __int64 uint64_t;
+#endif
+
+typedef union {
+    int     i;
+    float   f;
+} fint_t;
+
+#define ASCII_SLASH		47
+#define ASCII_BACKSLASH 92
+
+#ifdef _WIN32
+
+#define DIR_SEPARATOR '\\'
+#define PATH_SEPARATOR ';'
+
+#else
+
+#define DIR_SEPARATOR '/'
+#define PATH_SEPARATOR ':'
+
+#endif
+
+#include <limits.h>
+#define D_MININT INT_MIN
+#define D_MAXINT INT_MAX
+
+#ifndef MAX
+#define MAX(a,b) ((a)>(b)?(a):(b))
+#endif
+
+#ifndef MIN
+#define MIN(a,b) ((a)<(b)?(a):(b))
+#endif
+
+#ifndef BETWEEN
+#define BETWEEN(l,u,x) ((l)>(x)?(l):(x)>(u)?(u):(x))
+#endif
+
+#ifndef BIT
+#define BIT(num) (1<<(num))
+#endif
+
+#if defined(__WIN32__) && !defined(__GNUC__)
+#define KDECL __cdecl
+#else
+#define KDECL
+#endif
+
+#ifdef ALIGNED
+#undef ALIGNED
+#endif
+
+#if defined(_MSC_VER)
+#define ALIGNED(x) __declspec(align(x))
+#elif defined(__GNUC__)
+#define ALIGNED(x) __attribute__ ((aligned(x)))
+#else
+#define ALIGNED(x)
+#endif
+
+// function inlining is available on most platforms, however,
+// the GNU C __inline__ is too common and conflicts with a 
+// definition in other dependencies, so it needs to be factored
+// out into a custom macro definition
+
+#if defined(__GNUC__)
+#define d_inline __inline__
+#elif defined(_MSC_VER) || defined(WIN32)
+#define d_inline __forceinline
+#else
+#define d_inline
+#endif
+
+#define KEXLIB_NAMESPACE_START(x)  namespace x {
+#define KEXLIB_NAMESPACE_END    }
+
+#define RGBA(r,g,b,a) ((rcolor)((((a)&0xff)<<24)|(((b)&0xff)<<16)|(((g)&0xff)<<8)|((r)&0xff)))
+
+#define COLOR_WHITE         RGBA(0xFF, 0xFF, 0xFF, 0xFF)
+#define COLOR_WHITE_A(a)    RGBA(0xFF, 0xFF, 0xFF, a)
+#define COLOR_RED           RGBA(0xFF, 0, 0, 0xFF)
+#define COLOR_GREEN         RGBA(0, 0xFF, 0, 0xFF)
+#define COLOR_YELLOW        RGBA(0xFF, 0xFF, 0, 0xFF)
+#define COLOR_CYAN          RGBA(0, 0xFF, 0xFF, 0xFF)
+
 #include "mathlib.h"
 #include "system.h"
 #include "kstring.h"
@@ -40,10 +179,17 @@
 #include "keyinput.h"
 #include "parser.h"
 #include "defs.h"
+#include "getter.h"
+#include "resourceManager.h"
 
-KEXLIB_NAMESPACE_START
+#ifndef KEXLIB_DISABLE_RENDER
+#include "render.h"
+#endif
+
+KEXLIB_NAMESPACE_START(kexlib)
 
 extern kexCvar cvarDeveloper;
+extern kexCvar cvarBasePath;
 
 extern kexSystem *system;
 extern kexInputSystem *inputSystem;

@@ -39,6 +39,8 @@ private:
     kexStr                      value;
 };
 
+class kexVec3;
+
 class kexKeyMap {
 public:
                                 kexKeyMap(void);

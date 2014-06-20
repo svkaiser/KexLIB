@@ -23,8 +23,6 @@
 #ifndef __INPUT_SYSTEM_H__
 #define __INPUT_SYSTEM_H__
 
-#include "common.h"
-
 // Input event types.
 typedef enum {
     ev_keydown,

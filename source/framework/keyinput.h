@@ -34,8 +34,6 @@
 
 #define MAXACTIONS  256
 
-#include "common.h"
-
 typedef struct {
     float       mousex;
     float       mousey;

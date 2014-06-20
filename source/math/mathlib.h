@@ -24,8 +24,7 @@
 #define __MATHLIB_H__
 
 #include <math.h>
-#include "kstring.h"
-#include "common.h"
+#include "kexlib.h"
 
 #ifdef M_PI
 #undef M_PI
@@ -45,6 +44,7 @@ class kexVec3;
 class kexVec4;
 class kexMatrix;
 class kexAngle;
+class kexStr;
 
 class kexMath {
 public:
@@ -67,6 +67,7 @@ public:
     static float            InvSqrt(float x);
     static float            SinZeroHalfPI(float a);
     static float            ATanPositive(float y, float x);
+    static bool             FCmp(float f1, float f2);
     static void             Clamp(float &f, const float min, const float max);
     static void             Clamp(int &i, const int min, const int max);
     static void             Clamp(byte &b, const byte min, const byte max);
@@ -75,8 +76,6 @@ public:
                                        const kexVec3 &point, kexVec3 *vec);
     static void             QuadraticCurve(const kexVec3 &start, const kexVec3 &end, const float time,
                                            const kexVec3 &pt1, const kexVec3 &pt2, kexVec3 *vec);
-
-    static void             InitObject(void);
 };
 
 class kexRand {

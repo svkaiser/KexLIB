@@ -19,19 +19,26 @@
 // 02111-1307, USA.
 //
 //-----------------------------------------------------------------------------
-//
-// DESCRIPTION: Kex Library
-//
-//-----------------------------------------------------------------------------
+
+#ifndef __RENDER_H__
+#define __RENDER_H__
 
 #include "kexlib.h"
+#include "renderBackend.h"
+#include "shaderProg.h"
+#include "fbo.h"
+#include "image.h"
+#include "renderFont.h"
+#include "textureObject.h"
+#include "cpuVertexList.h"
 
 KEXLIB_NAMESPACE_START(kexlib)
+KEXLIB_NAMESPACE_START(render)
 
-kexCvar cvarDeveloper("developer", CVF_BOOL|CVF_CONFIG, "0", "Developer mode");
-kexCvar cvarBasePath("basepath", CVF_STRING|CVF_CONFIG, "", "Base file path to look for files");
-
-kexSystem *system           = NULL;
-kexInputSystem *inputSystem = NULL;
+extern kexRenderBackend *backend;
+extern kexCpuVertList *cpuVertList;
 
 KEXLIB_NAMESPACE_END
+KEXLIB_NAMESPACE_END
+
+#endif

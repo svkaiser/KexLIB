@@ -147,6 +147,21 @@ float kexMath::ATanPositive(float y, float x) {
 }
 
 //
+// kexMath::FCmp
+//
+
+bool kexMath::FCmp(float f1, float f2) {
+    float precision = 0.00001f;
+    if(((f1 - precision) < f2) && 
+        ((f1 + precision) > f2)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+//
 // kexMath::Clamp
 //
 

@@ -23,6 +23,12 @@
 #ifndef __BINFILE_H__
 #define __BINFILE_H__
 
+class kexVec2;
+class kexVec3;
+class kexVec4;
+class kexQuat;
+class kexMatrix;
+
 class kexBinFile {
 public:
                         kexBinFile(void);

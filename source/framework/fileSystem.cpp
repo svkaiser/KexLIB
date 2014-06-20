@@ -33,8 +33,6 @@
 
 #define FILE_MAX_HASH_SIZE  32768
 
-kexCvar cvarBasePath("kf_basepath", CVF_STRING|CVF_CONFIG, "", "Base file path to look for files");
-
 static kexFileSystem fileSystemLocal;
 kexFileSystem *kexlib::fileSystem = &fileSystemLocal;
 
@@ -229,7 +227,7 @@ void kexFileSystem::GetMatchingFiles(kexStrList &list, const char *search) {
         DIR *dir;
         struct dirent *ent;
         int idx;
-        kexStr path = kexStr(cvarBasePath.GetValue()) + "/" + search;
+        kexStr path = kexStr(kexlib::cvarBasePath.GetValue()) + "/" + search;
         path.NormalizeSlashes();
         
         if((dir = opendir(path.c_str())) != NULL) {
@@ -268,7 +266,7 @@ int kexFileSystem::OpenExternalFile(const char *name, byte **buffer) const {
     kexStr fPath;
     FILE *fp;
 
-    sprintf(filepath, "%s\\%s", cvarBasePath.GetValue(), name);
+    sprintf(filepath, "%s\\%s", kexlib::cvarBasePath.GetValue(), name);
     
     fPath = filepath;
     fPath.NormalizeSlashes();
@@ -300,8 +298,8 @@ int kexFileSystem::OpenExternalFile(const char *name, byte **buffer) const {
 //
 
 void kexFileSystem::Init(void) {
-    if(!strlen(cvarBasePath.GetValue())) {
-        cvarBasePath.Set(kexlib::system->GetBaseDirectory());
+    if(!strlen(kexlib::cvarBasePath.GetValue())) {
+        kexlib::cvarBasePath.Set(kexlib::system->GetBaseDirectory());
     }
 
     LoadZipFile("data000.kpf");
