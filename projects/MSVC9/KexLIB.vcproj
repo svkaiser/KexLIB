@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(OutDir)\..\..\..\source\&quot;;&quot;$(OutDir)\..\..\..\source\framework\&quot;;&quot;$(OutDir)\..\..\..\source\framework\external&quot;;&quot;$(OutDir)\..\..\..\source\framework\win32&quot;;&quot;$(OutDir)\..\..\..\source\math&quot;;&quot;$(OutDir)\..\..\..\source\render\&quot;;&quot;$(OutDir)\..\..\..\source\render\opengl\&quot;"
+				AdditionalIncludeDirectories="..\..\source\"
 				PreprocessorDefinitions="WIN32;_WIN32;__WIN32__;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -205,6 +205,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\source\framework\getter.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\source\framework\inputSystem.h"
 					>
 				</File>
@@ -348,78 +352,6 @@
 					RelativePath="..\..\source\math\vector.cpp"
 					>
 				</File>
-			</Filter>
-			<Filter
-				Name="Render"
-				>
-				<File
-					RelativePath="..\..\source\render\fbo.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\fbo.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\image.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\image.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\material.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\material.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\renderBackend.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\renderBackend.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\renderFont.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\renderFont.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\shaderProg.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\shaderProg.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\textureObject.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\source\render\textureObject.h"
-					>
-				</File>
-				<Filter
-					Name="OpenGL"
-					>
-					<File
-						RelativePath="..\..\source\render\opengl\dgl.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\source\render\opengl\glcommon.h"
-						>
-					</File>
-				</Filter>
 			</Filter>
 		</Filter>
 	</Files>

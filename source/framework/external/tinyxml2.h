@@ -63,7 +63,7 @@ distribution.
 #   pragma warning(disable: 4251)
 #endif
 
-#ifdef _WIN32
+#ifdef KEX_WIN32
 #   ifdef TINYXML2_EXPORT
 #       define TINYXML2_LIB __declspec(dllexport)
 #   elif defined(TINYXML2_IMPORT)

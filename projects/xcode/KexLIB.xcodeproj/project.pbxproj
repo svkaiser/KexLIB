@@ -7,6 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41AF207B1950937600EEDD69 /* resourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 41AF207A1950937600EEDD69 /* resourceManager.h */; };
+		41AF349C19549BA7008EB2FD /* kexlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA67194F4F6500CBBF04 /* kexlib.cpp */; };
+		41AF349D19549BA7008EB2FD /* binFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA43194F4F6500CBBF04 /* binFile.cpp */; };
+		41AF349E19549BA7008EB2FD /* cmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA46194F4F6500CBBF04 /* cmd.cpp */; };
+		41AF34A019549BA7008EB2FD /* cvar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA49194F4F6500CBBF04 /* cvar.cpp */; };
+		41AF34A119549BA7008EB2FD /* defs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA4B194F4F6500CBBF04 /* defs.cpp */; };
+		41AF34A219549BA7008EB2FD /* fileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA52194F4F6500CBBF04 /* fileSystem.cpp */; };
+		41AF34A319549BA7008EB2FD /* keyinput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA55194F4F6500CBBF04 /* keyinput.cpp */; };
+		41AF34A419549BA7008EB2FD /* keymap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA57194F4F6500CBBF04 /* keymap.cpp */; };
+		41AF34A619549BA7008EB2FD /* kstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA59194F4F6500CBBF04 /* kstring.cpp */; };
+		41AF34A719549BA7008EB2FD /* memHeap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA5C194F4F6500CBBF04 /* memHeap.cpp */; };
+		41AF34A819549BA7008EB2FD /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA5E194F4F6500CBBF04 /* object.cpp */; };
+		41AF34A919549BA7008EB2FD /* parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA60194F4F6500CBBF04 /* parser.cpp */; };
+		41AF34AA19549BA7008EB2FD /* system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA62194F4F6500CBBF04 /* system.cpp */; };
+		41AF34AB19549BA7008EB2FD /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA4E194F4F6500CBBF04 /* tinyxml2.cpp */; };
+		41AF34AC19549BA7008EB2FD /* unzip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA50194F4F6500CBBF04 /* unzip.cpp */; };
+		41AF34AD19549BA7008EB2FD /* angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA6A194F4F6500CBBF04 /* angle.cpp */; };
+		41AF34AE19549BA7008EB2FD /* bounds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA6B194F4F6500CBBF04 /* bounds.cpp */; };
+		41AF34AF19549BA7008EB2FD /* mathlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA6C194F4F6500CBBF04 /* mathlib.cpp */; };
+		41AF34B019549BA7008EB2FD /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA6E194F4F6500CBBF04 /* matrix.cpp */; };
+		41AF34B119549BA7008EB2FD /* plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA6F194F4F6500CBBF04 /* plane.cpp */; };
+		41AF34B419549BA7008EB2FD /* pluecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA70194F4F6600CBBF04 /* pluecker.cpp */; };
+		41AF34B519549BA7008EB2FD /* quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA71194F4F6600CBBF04 /* quaternion.cpp */; };
+		41AF34B819549BA7008EB2FD /* random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA72194F4F6600CBBF04 /* random.cpp */; };
+		41AF34B919549BA7008EB2FD /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA73194F4F6600CBBF04 /* vector.cpp */; };
+		41AF34BC19549BA7008EB2FD /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B0DAB9194F500D00CBBF04 /* Carbon.framework */; };
+		41AF34BD19549BA7008EB2FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B0DABA194F500D00CBBF04 /* Cocoa.framework */; };
+		41AF34BE19549BA7008EB2FD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B0DAB7194F4FFA00CBBF04 /* OpenGL.framework */; };
+		41AF34C219549BA7008EB2FD /* getter.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F468681950F22400F99075 /* getter.h */; };
+		41AF34C419549BA7008EB2FD /* resourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 41AF207A1950937600EEDD69 /* resourceManager.h */; };
 		41B0DA80194F4FD100CBBF04 /* kexlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA67194F4F6500CBBF04 /* kexlib.cpp */; };
 		41B0DA82194F4FD100CBBF04 /* binFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA43194F4F6500CBBF04 /* binFile.cpp */; };
 		41B0DA83194F4FD100CBBF04 /* cmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA46194F4F6500CBBF04 /* cmd.cpp */; };
@@ -31,16 +61,15 @@
 		41B0DAA9194F4FD200CBBF04 /* quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA71194F4F6600CBBF04 /* quaternion.cpp */; };
 		41B0DAAA194F4FD200CBBF04 /* random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA72194F4F6600CBBF04 /* random.cpp */; };
 		41B0DAAB194F4FD200CBBF04 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA73194F4F6600CBBF04 /* vector.cpp */; };
-		41B0DAAD194F4FD200CBBF04 /* fbo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA75194F4F6600CBBF04 /* fbo.cpp */; };
-		41B0DAAE194F4FD200CBBF04 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA77194F4F6600CBBF04 /* image.cpp */; };
-		41B0DAAF194F4FD200CBBF04 /* renderBackend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA7C194F4F6600CBBF04 /* renderBackend.cpp */; };
-		41B0DAB0194F4FD200CBBF04 /* textureObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA7E194F4F6600CBBF04 /* textureObject.cpp */; };
 		41B0DAB8194F4FFA00CBBF04 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B0DAB7194F4FFA00CBBF04 /* OpenGL.framework */; };
 		41B0DABB194F500D00CBBF04 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B0DAB9194F500D00CBBF04 /* Carbon.framework */; };
 		41B0DABC194F500D00CBBF04 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B0DABA194F500D00CBBF04 /* Cocoa.framework */; };
+		41F468691950F22400F99075 /* getter.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F468681950F22400F99075 /* getter.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41AF207A1950937600EEDD69 /* resourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resourceManager.h; sourceTree = "<group>"; };
+		41AF34CE19549BA7008EB2FD /* libKexLIB_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKexLIB_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B0DA39194F4E9A00CBBF04 /* libKexLIB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKexLIB.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B0DA42194F4F6500CBBF04 /* array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
 		41B0DA43194F4F6500CBBF04 /* binFile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = binFile.cpp; sourceTree = "<group>"; };
@@ -48,7 +77,6 @@
 		41B0DA45194F4F6500CBBF04 /* cachefilelist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cachefilelist.h; sourceTree = "<group>"; };
 		41B0DA46194F4F6500CBBF04 /* cmd.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cmd.cpp; sourceTree = "<group>"; };
 		41B0DA47194F4F6500CBBF04 /* cmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmd.h; sourceTree = "<group>"; };
-		41B0DA48194F4F6500CBBF04 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		41B0DA49194F4F6500CBBF04 /* cvar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cvar.cpp; sourceTree = "<group>"; };
 		41B0DA4A194F4F6500CBBF04 /* cvar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cvar.h; sourceTree = "<group>"; };
 		41B0DA4B194F4F6500CBBF04 /* defs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = defs.cpp; sourceTree = "<group>"; };
@@ -87,22 +115,23 @@
 		41B0DA71194F4F6600CBBF04 /* quaternion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = quaternion.cpp; sourceTree = "<group>"; };
 		41B0DA72194F4F6600CBBF04 /* random.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = random.cpp; sourceTree = "<group>"; };
 		41B0DA73194F4F6600CBBF04 /* vector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
-		41B0DA75194F4F6600CBBF04 /* fbo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fbo.cpp; sourceTree = "<group>"; };
-		41B0DA76194F4F6600CBBF04 /* fbo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fbo.h; sourceTree = "<group>"; };
-		41B0DA77194F4F6600CBBF04 /* image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = image.cpp; sourceTree = "<group>"; };
-		41B0DA78194F4F6600CBBF04 /* image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
-		41B0DA7A194F4F6600CBBF04 /* dgl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dgl.h; sourceTree = "<group>"; };
-		41B0DA7B194F4F6600CBBF04 /* glcommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glcommon.h; sourceTree = "<group>"; };
-		41B0DA7C194F4F6600CBBF04 /* renderBackend.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = renderBackend.cpp; sourceTree = "<group>"; };
-		41B0DA7D194F4F6600CBBF04 /* renderBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = renderBackend.h; sourceTree = "<group>"; };
-		41B0DA7E194F4F6600CBBF04 /* textureObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textureObject.cpp; sourceTree = "<group>"; };
-		41B0DA7F194F4F6600CBBF04 /* textureObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textureObject.h; sourceTree = "<group>"; };
 		41B0DAB7194F4FFA00CBBF04 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		41B0DAB9194F500D00CBBF04 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		41B0DABA194F500D00CBBF04 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		41F468681950F22400F99075 /* getter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		41AF34BB19549BA7008EB2FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41AF34BC19549BA7008EB2FD /* Carbon.framework in Frameworks */,
+				41AF34BD19549BA7008EB2FD /* Cocoa.framework in Frameworks */,
+				41AF34BE19549BA7008EB2FD /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41B0DA36194F4E9A00CBBF04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				41B0DA39194F4E9A00CBBF04 /* libKexLIB.a */,
+				41AF34CE19549BA7008EB2FD /* libKexLIB_iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,7 +170,6 @@
 				41B0DA68194F4F6500CBBF04 /* kexlib.h */,
 				41B0DA41194F4F6500CBBF04 /* Framework */,
 				41B0DA69194F4F6500CBBF04 /* Math */,
-				41B0DA74194F4F6600CBBF04 /* Render */,
 			);
 			name = Source;
 			path = ../../source;
@@ -165,10 +194,10 @@
 				41B0DA44194F4F6500CBBF04 /* binFile.h */,
 				41B0DA45194F4F6500CBBF04 /* cachefilelist.h */,
 				41B0DA47194F4F6500CBBF04 /* cmd.h */,
-				41B0DA48194F4F6500CBBF04 /* common.h */,
 				41B0DA4A194F4F6500CBBF04 /* cvar.h */,
 				41B0DA4C194F4F6500CBBF04 /* defs.h */,
 				41B0DA53194F4F6500CBBF04 /* filesystem.h */,
+				41F468681950F22400F99075 /* getter.h */,
 				41B0DA54194F4F6500CBBF04 /* inputSystem.h */,
 				41B0DA56194F4F6500CBBF04 /* keyinput.h */,
 				41B0DA58194F4F6500CBBF04 /* keymap.h */,
@@ -177,6 +206,7 @@
 				41B0DA5D194F4F6500CBBF04 /* memHeap.h */,
 				41B0DA5F194F4F6500CBBF04 /* object.h */,
 				41B0DA61194F4F6500CBBF04 /* parser.h */,
+				41AF207A1950937600EEDD69 /* resourceManager.h */,
 				41B0DA63194F4F6500CBBF04 /* system.h */,
 				41B0DA4D194F4F6500CBBF04 /* external */,
 			);
@@ -213,33 +243,6 @@
 			path = math;
 			sourceTree = "<group>";
 		};
-		41B0DA74194F4F6600CBBF04 /* Render */ = {
-			isa = PBXGroup;
-			children = (
-				41B0DA75194F4F6600CBBF04 /* fbo.cpp */,
-				41B0DA77194F4F6600CBBF04 /* image.cpp */,
-				41B0DA7C194F4F6600CBBF04 /* renderBackend.cpp */,
-				41B0DA7E194F4F6600CBBF04 /* textureObject.cpp */,
-				41B0DA76194F4F6600CBBF04 /* fbo.h */,
-				41B0DA78194F4F6600CBBF04 /* image.h */,
-				41B0DA7D194F4F6600CBBF04 /* renderBackend.h */,
-				41B0DA7F194F4F6600CBBF04 /* textureObject.h */,
-				41B0DA79194F4F6600CBBF04 /* OpenGL */,
-			);
-			name = Render;
-			path = render;
-			sourceTree = "<group>";
-		};
-		41B0DA79194F4F6600CBBF04 /* OpenGL */ = {
-			isa = PBXGroup;
-			children = (
-				41B0DA7A194F4F6600CBBF04 /* dgl.h */,
-				41B0DA7B194F4F6600CBBF04 /* glcommon.h */,
-			);
-			name = OpenGL;
-			path = opengl;
-			sourceTree = "<group>";
-		};
 		41B0DABE194F536B00CBBF04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,16 +256,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		41AF34BF19549BA7008EB2FD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41AF34C219549BA7008EB2FD /* getter.h in Headers */,
+				41AF34C419549BA7008EB2FD /* resourceManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41B0DA37194F4E9A00CBBF04 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F468691950F22400F99075 /* getter.h in Headers */,
+				41AF207B1950937600EEDD69 /* resourceManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		41AF349919549BA7008EB2FD /* KexLIB_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41AF34CB19549BA7008EB2FD /* Build configuration list for PBXNativeTarget "KexLIB_iOS" */;
+			buildPhases = (
+				41AF349A19549BA7008EB2FD /* Sources */,
+				41AF34BB19549BA7008EB2FD /* Frameworks */,
+				41AF34BF19549BA7008EB2FD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KexLIB_iOS;
+			productName = KexLIB;
+			productReference = 41AF34CE19549BA7008EB2FD /* libKexLIB_iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		41B0DA38194F4E9A00CBBF04 /* KexLIB */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41B0DA3D194F4E9A00CBBF04 /* Build configuration list for PBXNativeTarget "KexLIB" */;
@@ -301,11 +332,43 @@
 			projectRoot = "";
 			targets = (
 				41B0DA38194F4E9A00CBBF04 /* KexLIB */,
+				41AF349919549BA7008EB2FD /* KexLIB_iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		41AF349A19549BA7008EB2FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41AF349C19549BA7008EB2FD /* kexlib.cpp in Sources */,
+				41AF349D19549BA7008EB2FD /* binFile.cpp in Sources */,
+				41AF349E19549BA7008EB2FD /* cmd.cpp in Sources */,
+				41AF34A019549BA7008EB2FD /* cvar.cpp in Sources */,
+				41AF34A119549BA7008EB2FD /* defs.cpp in Sources */,
+				41AF34A219549BA7008EB2FD /* fileSystem.cpp in Sources */,
+				41AF34A319549BA7008EB2FD /* keyinput.cpp in Sources */,
+				41AF34A419549BA7008EB2FD /* keymap.cpp in Sources */,
+				41AF34A619549BA7008EB2FD /* kstring.cpp in Sources */,
+				41AF34A719549BA7008EB2FD /* memHeap.cpp in Sources */,
+				41AF34A819549BA7008EB2FD /* object.cpp in Sources */,
+				41AF34A919549BA7008EB2FD /* parser.cpp in Sources */,
+				41AF34AA19549BA7008EB2FD /* system.cpp in Sources */,
+				41AF34AB19549BA7008EB2FD /* tinyxml2.cpp in Sources */,
+				41AF34AC19549BA7008EB2FD /* unzip.cpp in Sources */,
+				41AF34AD19549BA7008EB2FD /* angle.cpp in Sources */,
+				41AF34AE19549BA7008EB2FD /* bounds.cpp in Sources */,
+				41AF34AF19549BA7008EB2FD /* mathlib.cpp in Sources */,
+				41AF34B019549BA7008EB2FD /* matrix.cpp in Sources */,
+				41AF34B119549BA7008EB2FD /* plane.cpp in Sources */,
+				41AF34B419549BA7008EB2FD /* pluecker.cpp in Sources */,
+				41AF34B519549BA7008EB2FD /* quaternion.cpp in Sources */,
+				41AF34B819549BA7008EB2FD /* random.cpp in Sources */,
+				41AF34B919549BA7008EB2FD /* vector.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41B0DA35194F4E9A00CBBF04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,16 +397,52 @@
 				41B0DAA9194F4FD200CBBF04 /* quaternion.cpp in Sources */,
 				41B0DAAA194F4FD200CBBF04 /* random.cpp in Sources */,
 				41B0DAAB194F4FD200CBBF04 /* vector.cpp in Sources */,
-				41B0DAAD194F4FD200CBBF04 /* fbo.cpp in Sources */,
-				41B0DAAE194F4FD200CBBF04 /* image.cpp in Sources */,
-				41B0DAAF194F4FD200CBBF04 /* renderBackend.cpp in Sources */,
-				41B0DAB0194F4FD200CBBF04 /* textureObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		41AF34CC19549BA7008EB2FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				PRODUCT_NAME = KexLIB_iOS;
+				SDKROOT = iphoneos7.1;
+			};
+			name = Debug;
+		};
+		41AF34CD19549BA7008EB2FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				PRODUCT_NAME = KexLIB_iOS;
+				SDKROOT = iphoneos7.1;
+			};
+			name = Release;
+		};
 		41B0DA3B194F4E9A00CBBF04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -451,6 +550,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41AF34CB19549BA7008EB2FD /* Build configuration list for PBXNativeTarget "KexLIB_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41AF34CC19549BA7008EB2FD /* Debug */,
+				41AF34CD19549BA7008EB2FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		41B0DA34194F4E9A00CBBF04 /* Build configuration list for PBXProject "KexLIB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

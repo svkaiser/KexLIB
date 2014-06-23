@@ -31,7 +31,15 @@ KEXLIB_NAMESPACE_START(kexlib)
 kexCvar cvarDeveloper("developer", CVF_BOOL|CVF_CONFIG, "0", "Developer mode");
 kexCvar cvarBasePath("basepath", CVF_STRING|CVF_CONFIG, "", "Base file path to look for files");
 
-kexSystem *system           = NULL;
-kexInputSystem *inputSystem = NULL;
+void Init(void) {
+    system->Init();
+    cvars->Init();
+    kexObject::Init();
+    inputSystem->Init();
+    inputBinds->Init();
+    fileSystem->Init();
+
+    system->Printf("KexLib Initialized\n");
+}
 
 KEXLIB_NAMESPACE_END

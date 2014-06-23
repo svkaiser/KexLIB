@@ -23,27 +23,29 @@
 #ifndef __KEXLIB_H__
 #define __KEXLIB_H__
 
+// narrow down the windows preprocessor bullshit down to just one macro define
+#if defined(__WIN32__) || defined(__WIN32) || defined(_WIN32_) || defined(_WIN32) || defined(WIN32)
+#define KEX_WIN32
+#else
 #if defined(__APPLE__)
-/* lets us know what version of Mac OS X we're compiling on */
+// lets us know what version of Mac OS X we're compiling on
 #include "AvailabilityMacros.h"
 #include "TargetConditionals.h"
 #if TARGET_OS_IPHONE
-/* if compiling for iPhone */
-#undef __IPHONEOS__
-#define __IPHONEOS__ 1
-#undef __MACOSX__
+// if compiling for iPhone
+#define KEX_IPHONE
 #else
-/* if not compiling for iPhone */
-#undef __MACOSX__
-#define __MACOSX__  1
+// if not compiling for iPhone
+#define KEX_MACOSX
 #if MAC_OS_X_VERSION_MIN_REQUIRED < 1050
 # error KexLIB for Mac OS X only supports deploying on 10.5 and above.
-#endif /* MAC_OS_X_VERSION_MIN_REQUIRED < 1050 */
+#endif // MAC_OS_X_VERSION_MIN_REQUIRED < 1050
 #if MAC_OS_X_VERSION_MAX_ALLOWED < 1060
 # error KexLIB for Mac OS X must be built with a 10.6 SDK or above.
-#endif /* MAC_OS_X_VERSION_MAX_ALLOWED < 1060 */
-#endif /* TARGET_OS_IPHONE */
-#endif /* defined(__APPLE__) */
+#endif // MAC_OS_X_VERSION_MAX_ALLOWED < 1060
+#endif // TARGET_OS_IPHONE
+#endif // defined(__APPLE__)
+#endif // WIN32
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -52,9 +54,13 @@
 #include <assert.h>
 #include <ctype.h>
 #ifdef _MSC_VER
-#include "opndir.h"
+#include "framework/win32/opndir.h"
 #else
 #include <dirent.h>
+#endif
+#include <time.h>
+#ifndef KEX_WIN32
+#include <unistd.h>
 #endif
 #include <new>
 
@@ -88,16 +94,12 @@ typedef union {
 #define ASCII_SLASH		47
 #define ASCII_BACKSLASH 92
 
-#ifdef _WIN32
-
+#ifdef KEX_WIN32
 #define DIR_SEPARATOR '\\'
 #define PATH_SEPARATOR ';'
-
 #else
-
 #define DIR_SEPARATOR '/'
 #define PATH_SEPARATOR ':'
-
 #endif
 
 #include <limits.h>
@@ -120,7 +122,7 @@ typedef union {
 #define BIT(num) (1<<(num))
 #endif
 
-#if defined(__WIN32__) && !defined(__GNUC__)
+#if defined(KEX_WIN32) && !defined(__GNUC__)
 #define KDECL __cdecl
 #else
 #define KDECL
@@ -145,7 +147,7 @@ typedef union {
 
 #if defined(__GNUC__)
 #define d_inline __inline__
-#elif defined(_MSC_VER) || defined(WIN32)
+#elif defined(_MSC_VER) || defined(KEX_WIN32)
 #define d_inline __forceinline
 #else
 #define d_inline
@@ -163,30 +165,28 @@ typedef union {
 #define COLOR_YELLOW        RGBA(0xFF, 0xFF, 0, 0xFF)
 #define COLOR_CYAN          RGBA(0, 0xFF, 0xFF, 0xFF)
 
-#include "mathlib.h"
-#include "system.h"
-#include "kstring.h"
-#include "inputSystem.h"
-#include "cmd.h"
-#include "cvar.h"
-#include "array.h"
-#include "object.h"
-#include "memHeap.h"
-#include "keymap.h"
-#include "fileSystem.h"
-#include "binFile.h"
-#include "cachefilelist.h"
-#include "keyinput.h"
-#include "parser.h"
-#include "defs.h"
-#include "getter.h"
-#include "resourceManager.h"
-
-#ifndef KEXLIB_DISABLE_RENDER
-#include "render.h"
-#endif
+#include "math/mathlib.h"
+#include "framework/system.h"
+#include "framework/kstring.h"
+#include "framework/inputSystem.h"
+#include "framework/cmd.h"
+#include "framework/cvar.h"
+#include "framework/array.h"
+#include "framework/object.h"
+#include "framework/memHeap.h"
+#include "framework/keymap.h"
+#include "framework/fileSystem.h"
+#include "framework/binFile.h"
+#include "framework/cachefilelist.h"
+#include "framework/keyinput.h"
+#include "framework/parser.h"
+#include "framework/defs.h"
+#include "framework/getter.h"
+#include "framework/resourceManager.h"
 
 KEXLIB_NAMESPACE_START(kexlib)
+
+void Init(void);
 
 extern kexCvar cvarDeveloper;
 extern kexCvar cvarBasePath;
