@@ -30,6 +30,7 @@ typedef enum {
     GRT_VEC2,
     GRT_VEC3,
     GRT_VEC4,
+    GRT_MAT4,
     GRT_NUMTYPES
 } getterReturnType_t;
 
@@ -41,6 +42,7 @@ public:
     virtual kexVec2             &GetVec2Value(void) = 0;
     virtual kexVec3             &GetVec3Value(void) = 0;
     virtual kexVec4             &GetVec4Value(void) = 0;
+    virtual kexMatrix           &GetMat4Value(void) = 0;
     
     kexStr                      &Name(void) { return name; }
     const getterReturnType_t    ReturnType(void) const { return retType; }
@@ -59,6 +61,7 @@ public:
     typedef kexVec2             &(type::*callbackVec2_t)(void);
     typedef kexVec3             &(type::*callbackVec3_t)(void);
     typedef kexVec4             &(type::*callbackVec4_t)(void);
+    typedef kexMatrix           &(type::*callbackMat4_t)(void);
     
 protected:
     type                        *obj;
@@ -68,6 +71,7 @@ protected:
     callbackVec2_t              callbackVec2;
     callbackVec3_t              callbackVec3;
     callbackVec4_t              callbackVec4;
+    callbackMat4_t              callbackMat4;
     
 public:
     kexGetter(const char *pName, type *pObj, callbackFloat_t pCallback) {
@@ -111,6 +115,13 @@ public:
         this->retType = GRT_VEC4;
         this->callbackVec4 = pCallback;
     }
+
+    kexGetter(const char *pName, type *pObj, callbackMat4_t pCallback) {
+        this->name = pName;
+        this->obj = pObj;
+        this->retType = GRT_MAT4;
+        this->callbackMat4 = pCallback;
+    }
     
     virtual float               GetFloatValue(void) const { return (obj->*callbackFloat)(); }
     virtual int                 GetIntValue(void) const { return (obj->*callbackInt)(); }
@@ -118,6 +129,7 @@ public:
     virtual kexVec2             &GetVec2Value(void) { return (obj->*callbackVec2)(); }
     virtual kexVec3             &GetVec3Value(void) { return (obj->*callbackVec3)(); }
     virtual kexVec4             &GetVec4Value(void) { return (obj->*callbackVec4)(); }
+    virtual kexMatrix           &GetMat4Value(void) { return (obj->*callbackMat4)(); }
 };
 
 #define GETTER_FLOAT(t) typename kexGetter<t>::callbackFloat_t
@@ -126,6 +138,7 @@ public:
 #define GETTER_VEC2(t)  typename kexGetter<t>::callbackVec2_t
 #define GETTER_VEC3(t)  typename kexGetter<t>::callbackVec3_t
 #define GETTER_VEC4(t)  typename kexGetter<t>::callbackVec4_t
+#define GETTER_MAT4(t)  typename kexGetter<t>::callbackMat4_t
 
 #endif
 

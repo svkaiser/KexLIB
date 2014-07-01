@@ -172,6 +172,7 @@ typedef union {
 #include "framework/cmd.h"
 #include "framework/cvar.h"
 #include "framework/array.h"
+#include "framework/linkedlist.h"
 #include "framework/object.h"
 #include "framework/memHeap.h"
 #include "framework/keymap.h"

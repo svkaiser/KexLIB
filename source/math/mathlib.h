@@ -231,6 +231,7 @@ public:
     kexVec3                 operator/(const float val);
     kexVec3                 operator*(const kexQuat &quat);
     kexVec3                 operator*(const kexMatrix &mtx);
+    kexVec3                 operator*(const kexMatrix &mtx) const;
     kexVec3                 &operator=(const kexVec3 &vec);
     kexVec3                 &operator=(const float *vecs);
     kexVec3                 &operator+=(const kexVec3 &vec);
@@ -311,11 +312,12 @@ public:
     
     kexMatrix               operator*(const kexVec3 &vector);
     kexMatrix               &operator*=(const kexVec3 &vector);
-    kexMatrix               operator*(kexMatrix &matrix);
+    kexMatrix               operator*(const kexMatrix &matrix);
+    kexMatrix               &operator*=(const kexMatrix &matrix);
     friend kexMatrix        operator*(const kexMatrix &m1, const kexMatrix &m2);
     kexMatrix               &operator=(const kexMatrix &matrix);
     kexMatrix               &operator=(const float *m);
-    kexMatrix               operator|(kexMatrix &matrix);
+    kexMatrix               operator|(const kexMatrix &matrix);
     
     kexVec4                 vectors[4];
 };
@@ -386,10 +388,10 @@ public:
     kexAngle                &Clamp180Invert(void);
     kexAngle                &Clamp180InvertSum(const kexAngle &angle);
     kexAngle                Diff(kexAngle &angle);
-    void                    ToAxis(kexVec3 *forward, kexVec3 *up, kexVec3 *right);
-    kexVec3                 ToForwardAxis(void);
-    kexVec3                 ToUpAxis(void);
-    kexVec3                 ToRightAxis(void);
+    void                    ToAxis(kexVec3 *forward, kexVec3 *up, kexVec3 *right) const;
+    kexVec3                 ToForwardAxis(void) const;
+    kexVec3                 ToUpAxis(void) const;
+    kexVec3                 ToRightAxis(void) const;
     const kexVec3           &ToVec3(void) const;
     kexVec3                 &ToVec3(void);
     kexQuat                 ToQuat(void);

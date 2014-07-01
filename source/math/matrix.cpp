@@ -510,7 +510,7 @@ float *kexMatrix::ToFloatPtr(void) {
 // kexMatrix::operator*
 //
 
-kexMatrix kexMatrix::operator*(kexMatrix &matrix) {
+kexMatrix kexMatrix::operator*(const kexMatrix &matrix) {
     kexMatrix out;
 
     for(int i = 0; i < 4; i++) {
@@ -540,6 +540,37 @@ kexMatrix kexMatrix::operator*(kexMatrix &matrix) {
 }
 
 //
+// kexMatrix::operator*=
+//
+
+kexMatrix &kexMatrix::operator*=(const kexMatrix &matrix) {
+    for(int i = 0; i < 4; i++) {
+        vectors[i].x =
+            vectors[i].x * matrix.vectors[0].x +
+            vectors[i].y * matrix.vectors[1].x +
+            vectors[i].z * matrix.vectors[2].x +
+            vectors[i].w * matrix.vectors[3].x;
+        vectors[i].y =
+            vectors[i].x * matrix.vectors[0].y +
+            vectors[i].y * matrix.vectors[1].y +
+            vectors[i].z * matrix.vectors[2].y +
+            vectors[i].w * matrix.vectors[3].y;
+        vectors[i].z =
+            vectors[i].x * matrix.vectors[0].z +
+            vectors[i].y * matrix.vectors[1].z +
+            vectors[i].z * matrix.vectors[2].z +
+            vectors[i].w * matrix.vectors[3].z;
+        vectors[i].w =
+            vectors[i].x * matrix.vectors[0].w +
+            vectors[i].y * matrix.vectors[1].w +
+            vectors[i].z * matrix.vectors[2].w +
+            vectors[i].w * matrix.vectors[3].w;
+    }
+    
+    return *this;
+}
+
+//
 // kexMatrix::operator*
 //
 
@@ -548,25 +579,25 @@ kexMatrix operator*(const kexMatrix &m1, const kexMatrix &m2) {
     
     for(int i = 0; i < 4; i++) {
         out.vectors[i].x =
-        m1.vectors[i].x * m2.vectors[0].x +
-        m1.vectors[i].y * m2.vectors[1].x +
-        m1.vectors[i].z * m2.vectors[2].x +
-        m1.vectors[i].w * m2.vectors[3].x;
+            m1.vectors[i].x * m2.vectors[0].x +
+            m1.vectors[i].y * m2.vectors[1].x +
+            m1.vectors[i].z * m2.vectors[2].x +
+            m1.vectors[i].w * m2.vectors[3].x;
         out.vectors[i].y =
-        m1.vectors[i].x * m2.vectors[0].y +
-        m1.vectors[i].y * m2.vectors[1].y +
-        m1.vectors[i].z * m2.vectors[2].y +
-        m1.vectors[i].w * m2.vectors[3].y;
+            m1.vectors[i].x * m2.vectors[0].y +
+            m1.vectors[i].y * m2.vectors[1].y +
+            m1.vectors[i].z * m2.vectors[2].y +
+            m1.vectors[i].w * m2.vectors[3].y;
         out.vectors[i].z =
-        m1.vectors[i].x * m2.vectors[0].z +
-        m1.vectors[i].y * m2.vectors[1].z +
-        m1.vectors[i].z * m2.vectors[2].z +
-        m1.vectors[i].w * m2.vectors[3].z;
+            m1.vectors[i].x * m2.vectors[0].z +
+            m1.vectors[i].y * m2.vectors[1].z +
+            m1.vectors[i].z * m2.vectors[2].z +
+            m1.vectors[i].w * m2.vectors[3].z;
         out.vectors[i].w =
-        m1.vectors[i].x * m2.vectors[0].w +
-        m1.vectors[i].y * m2.vectors[1].w +
-        m1.vectors[i].z * m2.vectors[2].w +
-        m1.vectors[i].w * m2.vectors[3].w;
+            m1.vectors[i].x * m2.vectors[0].w +
+            m1.vectors[i].y * m2.vectors[1].w +
+            m1.vectors[i].z * m2.vectors[2].w +
+            m1.vectors[i].w * m2.vectors[3].w;
     }
     
     return out;
@@ -576,7 +607,7 @@ kexMatrix operator*(const kexMatrix &m1, const kexMatrix &m2) {
 // kexMatrix::operator|
 //
 
-kexMatrix kexMatrix::operator|(kexMatrix &matrix) {
+kexMatrix kexMatrix::operator|(const kexMatrix &matrix) {
     kexMatrix out;
 
     for(int i = 0; i < 3; i++) {

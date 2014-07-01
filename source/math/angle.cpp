@@ -212,7 +212,7 @@ kexAngle kexAngle::Diff(kexAngle &angle) {
 // kexAngle::ToAxis
 //
 
-void kexAngle::ToAxis(kexVec3 *forward, kexVec3 *up, kexVec3 *right) {
+void kexAngle::ToAxis(kexVec3 *forward, kexVec3 *up, kexVec3 *right) const {
     float sy = kexMath::Sin(yaw);
     float cy = kexMath::Cos(yaw);
     float sp = kexMath::Sin(pitch);
@@ -241,7 +241,7 @@ void kexAngle::ToAxis(kexVec3 *forward, kexVec3 *up, kexVec3 *right) {
 // kexAngle::ToForwardAxis
 //
 
-kexVec3 kexAngle::ToForwardAxis(void) {
+kexVec3 kexAngle::ToForwardAxis(void) const {
     kexVec3 vec;
 
     ToAxis(&vec, NULL, NULL);
@@ -252,7 +252,7 @@ kexVec3 kexAngle::ToForwardAxis(void) {
 // kexAngle::ToUpAxis
 //
 
-kexVec3 kexAngle::ToUpAxis(void) {
+kexVec3 kexAngle::ToUpAxis(void) const {
     kexVec3 vec;
 
     ToAxis(NULL, &vec, NULL);
@@ -263,7 +263,7 @@ kexVec3 kexAngle::ToUpAxis(void) {
 // kexAngle::ToRightAxis
 //
 
-kexVec3 kexAngle::ToRightAxis(void) {
+kexVec3 kexAngle::ToRightAxis(void) const {
     kexVec3 vec;
 
     ToAxis(NULL, NULL, &vec);
