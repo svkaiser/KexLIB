@@ -103,11 +103,13 @@ static void FCmd_KeyAction(void) {
     argv = kexlib::commands->GetArgv(0);
     action = inputKey.FindAction(argv);
 
-    if(action == -1)
+    if(action == -1) {
         return;
+    }
 
-    if(argv[0] == '-')
+    if(argv[0] == '-') {
         action |= CKF_UP;
+    }
 
     inputKey.HandleControl(action);
 }
@@ -295,8 +297,9 @@ int kexInputKey::FindAction(const char *name) {
     hash = kexStr::Hash(name);
 
     for(action = keyactions[hash]; action; action = action->next) {
-        if(!strcmp(name, action->name))
+        if(!strcmp(name, action->name)) {
             return action->keyid;
+        }
     }
 
     return -1;
