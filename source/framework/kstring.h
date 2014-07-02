@@ -73,6 +73,10 @@ public:
     kexStr              &operator+=(const char c);
     kexStr              &operator+=(const bool b);
     const char          operator[](int index) const;
+    
+    friend bool         operator==(const kexStr &a, const kexStr &b);
+    friend bool         operator==(const char *a, const kexStr &b);
+    friend bool         operator==(const kexStr &a, const char *b);
 
     operator            const char *(void) const { return c_str(); }
     operator            const char *(void) { return c_str(); }
@@ -99,5 +103,17 @@ protected:
     int                 length;
     int                 bufferLength;
 };
+
+d_inline bool operator==(const kexStr &a, const kexStr &b) {
+    return (!strcmp(a.charPtr, b.charPtr));
+}
+
+d_inline bool operator==(const char *a, const kexStr &b) {
+    return (!strcmp(a, b.charPtr));
+}
+
+d_inline bool operator==(const kexStr &a, const char *b) {
+    return (!strcmp(a.charPtr, b));
+}
 
 #endif
