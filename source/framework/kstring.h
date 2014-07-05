@@ -56,6 +56,7 @@ public:
     void                Split(kexStrList &list, const char seperator);
     int                 Atoi(void);
     float               Atof(void);
+    void                WriteToFile(const char *file);
 
     int                 Length(void) const { return length; }
     const char          *c_str(void) const { return charPtr; }

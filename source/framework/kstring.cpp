@@ -573,6 +573,20 @@ float kexStr::Atof(void) {
 }
 
 //
+// kexStr::WriteToFile
+//
+
+void kexStr::WriteToFile(const char *file) {
+    if(length <= 0) {
+        return;
+    }
+
+    FILE *f = fopen(file, "w");
+    fprintf(f, charPtr);
+    fclose(f);
+}
+
+//
 // kexStr::ToUpper
 //
 
