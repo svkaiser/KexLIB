@@ -214,7 +214,8 @@ public:
     float                   ToPitch(void) const;
     kexStr                  ToString(void) const;
     float                   *ToFloatPtr(void);
-    kexVec2                 ToVec2(void);
+    kexVec2                 XZToVec2(void);
+    kexVec2                 XYToVec2(void);
     kexVec3                 ScreenProject(kexMatrix &proj, kexMatrix &model,
                                           const int width, const int height,
                                           const int wx, const int wy);
@@ -426,6 +427,7 @@ public:
     void                    Clear(void);
     kexVec3                 Center(void) const;
     float                   Radius(void) const;
+    void                    AddPoint(const kexVec3 &vec);
     bool                    PointInside(const kexVec3 &vec) const;
     bool                    IntersectingBox(const kexBBox &box) const;
     bool                    IntersectingBox2D(const kexBBox &box) const;

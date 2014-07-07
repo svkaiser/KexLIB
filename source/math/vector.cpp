@@ -641,11 +641,19 @@ float *kexVec3::ToFloatPtr(void) {
 }
 
 //
-// kexVec3::ToVec2
+// kexVec3::XZToVec2
 //
 
-kexVec2 kexVec3::ToVec2(void) {
+kexVec2 kexVec3::XZToVec2(void) {
     return kexVec2(x, z);
+}
+
+//
+// kexVec3::XYToVec2
+//
+
+kexVec2 kexVec3::XYToVec2(void) {
+    return kexVec2(x, y);
 }
 
 //
