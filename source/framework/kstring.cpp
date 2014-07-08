@@ -582,7 +582,7 @@ void kexStr::WriteToFile(const char *file) {
     }
 
     FILE *f = fopen(file, "w");
-    fprintf(f, charPtr);
+    fprintf(f, "%s", charPtr);
     fclose(f);
 }
 
