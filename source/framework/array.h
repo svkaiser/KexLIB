@@ -143,7 +143,7 @@ void kexArray<type>::Pop(void) {
 //
 template<class type>
 void kexArray<type>::Empty(void) {
-    if(data) {
+    if(data && length > 0) {
         delete[] data;
         data = NULL;
         length = 0;
