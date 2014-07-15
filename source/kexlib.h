@@ -70,7 +70,7 @@
 typedef unsigned char   byte;
 typedef unsigned short  word;
 typedef unsigned long   ulong;
-typedef int             kbool;
+typedef unsigned int    uint;
 typedef unsigned int    dtexture;
 typedef unsigned int    rcolor;
 typedef char            filepath_t[MAX_FILEPATH];

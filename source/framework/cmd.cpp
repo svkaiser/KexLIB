@@ -141,8 +141,8 @@ void kexCommand::Execute(const char *buffer) {
     int j;
     char *b_rover;
     char *a_rover;
-    kbool havetoken;
-    kbool inquotes;
+    bool havetoken;
+    bool inquotes;
 
     j = 0;
     cmd_argc = 0;
