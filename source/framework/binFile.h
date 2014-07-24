@@ -35,10 +35,13 @@ public:
                         ~kexBinFile(void);
 
     bool                Open(const char *file, kexHeapBlock &heapBlock = hb_static);
+    bool                OpenStream(const char *file);
     bool                Create(const char *file);
     void                Close(void);
     bool                Exists(const char *file);
     int                 Length(void);
+
+    uint                ReadStream(uint offset, byte *buffer, uint length);
 
     byte                Read8(void);
     short               Read16(void);

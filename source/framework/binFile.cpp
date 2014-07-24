@@ -61,6 +61,19 @@ bool kexBinFile::Open(const char *file, kexHeapBlock &heapBlock) {
 }
 
 //
+// kexBinFile::OpenStream
+//
+
+bool kexBinFile::OpenStream(const char *file) {
+    if((handle = fopen(file, "rb"))) {
+        bOpened = true;
+        return true;
+    }
+
+    return false;
+}
+
+//
 // kexBinFile::Create
 //
 
@@ -140,6 +153,19 @@ int kexBinFile::Length(void) {
     fseek(handle, savedpos, SEEK_SET);
 
     return length;
+}
+
+//
+// kexBinFile::ReadStream
+//
+
+uint kexBinFile::ReadStream(uint offset, byte *buffer, uint length) {
+    if(!bOpened || !handle) {
+        return 0;
+    }
+
+    fseek(handle, offset, SEEK_SET);
+    return fread(buffer, 1, length, handle);
 }
 
 //
