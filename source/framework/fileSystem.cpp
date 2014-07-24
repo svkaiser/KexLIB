@@ -301,6 +301,4 @@ void kexFileSystem::Init(void) {
     if(!strlen(kexlib::cvarBasePath.GetValue())) {
         kexlib::cvarBasePath.Set(kexlib::system->GetBaseDirectory());
     }
-
-    LoadZipFile("data000.kpf");
 }
