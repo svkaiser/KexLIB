@@ -134,10 +134,13 @@ typedef union {
 
 #if defined(_MSC_VER)
 #define ALIGNED(x) __declspec(align(x))
+#define PACKED
 #elif defined(__GNUC__)
 #define ALIGNED(x) __attribute__ ((aligned(x)))
+#define PACKED __attribute__((packed))
 #else
 #define ALIGNED(x)
+#define PACKED
 #endif
 
 // function inlining is available on most platforms, however,
