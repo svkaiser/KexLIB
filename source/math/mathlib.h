@@ -157,6 +157,7 @@ public:
     kexVec2                 Lerp(const kexVec2 &next, float movement) const;
     kexVec2                 &Lerp(const kexVec2 &start, const kexVec2 &next, float movement);
     kexStr                  ToString(void) const;
+    float                   ToYaw(void) const;
     float                   *ToFloatPtr(void);
     kexVec3                 ToVec3(void);
 

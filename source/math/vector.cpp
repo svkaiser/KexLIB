@@ -202,6 +202,20 @@ kexVec2 &kexVec2::Lerp(const kexVec2 &start, const kexVec2 &next, float movement
 }
 
 //
+// kexVec2::ToYaw
+//
+
+float kexVec2::ToYaw(void) const {
+    float d = x * x + z * z;
+
+    if(d == 0.0f) {
+        return 0.0f;
+    }
+
+    return kexMath::ATan2(x, z);
+}
+
+//
 // kexVec2::ToString
 //
 
